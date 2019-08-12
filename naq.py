@@ -158,7 +158,8 @@ def _minimize_naq(fun, x0, args=(), jac=None, callback=None,
         result['allvecs'] = allvecs
     return result
     
-    def armijo_search(f, xk, pk, gfk):
+    
+def armijo_search(f, xk, pk, gfk):
 
     alpha = 0.9
     func1 = f(xk)
