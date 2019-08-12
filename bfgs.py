@@ -2,25 +2,7 @@ def _minimize_bfgs(fun, x0, args=(), jac=None, callback=None,
                    gtol=1e-6, norm=Inf, eps=_epsilon, maxiter=None,
                    disp=False, return_all=False, error_list=False,
                    **unknown_options):
-    """
-    Minimization of scalar function of one or more variables using the
-    BFGS algorithm.
 
-    Options
-    -------
-    disp : bool
-        Set to True to print convergence messages.
-    maxiter : int
-        Maximum number of iterations to perform.
-    gtol : float
-        Gradient norm must be less than `gtol` before successful
-        termination.
-    norm : float
-        Order of norm (Inf is max, -Inf is min).
-    eps : float or ndarray
-        If `jac` is approximated, use this value for the step size.
-
-    """
     _check_unknown_options(unknown_options)
     f = fun
     fprime = jac
@@ -59,9 +41,6 @@ def _minimize_bfgs(fun, x0, args=(), jac=None, callback=None,
     while (gnorm > gtol) and (k < maxiter):
         pk = -np.dot(Hk, gfk)
         try:
-            #alpha_k, fc, gc, old_fval, old_old_fval, gfkp1 = \
-            #         _line_search_wolfe12(f, myfprime, xk, pk, gfk,
-            #                              old_fval, old_old_fval, amin=1e-100, amax=1e100)
             alpha_k = armijo_search(f, xk, pk, gfk)
             if alpha_k == None:
                 warnflag = 2
