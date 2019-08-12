@@ -11,4 +11,4 @@
 
 
 ##### Reference Paper: 
-###### H.Ninomiya, "A novel quasi-Newton based optimization for neural network training incorporating nestrov's accelerated gradient", NOLTA, IEICE, vol. 8, no. 4, pp. 289-301, 2017
+###### H.Ninomiya, "A novel quasi-Newton based optimization for neural network training incorporating Nestrov's accelerated gradient", NOLTA, IEICE, vol. 8, no. 4, pp. 289-301, 2017
